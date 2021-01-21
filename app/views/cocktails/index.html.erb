@@ -6,10 +6,10 @@
           <div class="cocktail-card"  style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.mccourier.com/wp-content/uploads/2021/01/Drinks.jpg)">
             <h2><%= cocktail.name %></h2>
             <% if cocktail.photo.attached? %>
-            <%= cl_image_tag cocktail.photo.key, height: 300, width: 400, crop: :fill %>
+            <%= cl_image_tag cocktail.photo.key %>
             <% end %>
-            <%= link_to "Delete", cocktail_path(cocktail), method: :delete, data: {confirm: "Are you sure?"}  %>
           </div>
+            <%= link_to "Delete", cocktail_path(cocktail), method: :delete, data: {confirm: "Are you sure?"}  %>
         <% end %>
       </div>
     <% end %>
