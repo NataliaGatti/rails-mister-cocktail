@@ -3,7 +3,7 @@
 <h3>Add a Review</h3>
 <%= simple_form_for [cocktail, review] do |f| %>
     <%= f.input :content , label: "Content"  %>
-    <%= f.input :rating, collection: 0..5 %>
+    <%= f.input :rating, collection: 1..5 %>
     <%= f.button :submit, value: "Create a Review", class: "btn btn-primary"  %>
   <%end%>
 </div>
