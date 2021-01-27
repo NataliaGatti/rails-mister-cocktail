@@ -1,7 +1,16 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.mccourier.com/wp-content/uploads/2021/01/Drinks.jpg);">
-  <div class="container">
+
+<% if @cocktail.photo.attached? %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(<%= cl_image_path @cocktail.photo.key, crop: :fill; %>);">
+<div class="container">
     <h1><%= @cocktail.name %></h1>
   </div>
+<% else %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(https://www.mccourier.com/wp-content/uploads/2021/01/Drinks.jpg);">
+<div class="container">
+    <h1><%= @cocktail.name %></h1>
+  </div>
+<% end %>
+
 </div>
 <div class="container mt-3">
   <div class="row">
